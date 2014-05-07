@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
+        <title>{{ site.title }} &mdash; {% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.subtitle }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{{ site.url }}/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -16,6 +16,13 @@
         <style>
         /** quick fix because bootstrap <pre> has a background-color. */
         pre code { background-color: inherit; }
+        article {
+            font-size: 28px;
+            line-height: 36px;
+        }
+        article p {
+            padding-bottom: 20px;
+        }
         </style>
     </head>
     <body>
@@ -31,10 +38,8 @@
                         <a class="brand" href="{{ site.url }}/">{{ site.title }}</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
-                                <li><a href="{{ site.url }}/blog">Posts Archive</a></li>
-                                <li><a href="{{ site.url }}/blog/categories">Categories</a></li>
-                                <li><a href="{{ site.url }}/blog/tags">Tags</a></li>
-                                <li><a href="{{ site.url }}/about">About</a></li>
+                                <li><a href="{{ site.url }}/blog">Archive</a></li>
+                                <li><a href="{{ site.url }}/blog/tags">Ingredients</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>
@@ -48,20 +53,26 @@
                 </div>
                 <div class="span4 sidebar">
                     <div class="well">
-                        <h4>{{ site.title }}{% if site.subtitle %} <small>{{ site.subtitle }}</small>{% endif %}</h4>
+                        <h4>{{ site.title }}</h4>
+<p>I've been getting a basket from Lufa Farms for a few weeks now, and I thought it'd be helpful if I were to jot down some of the delicious things I've made with my weekly bounty.</p>
+
+<p>When I bake, I follow recipes pretty closely (it's chemistry after all), but when I cook, I often use recipes as inspiration, and don't do much measuring. I'll use that style, here, on this blog. You won't find specific measurements, but hopefully you'll find some inspiration.</p>
+
+<p>I often have a 9 year old assistant. She's usually either helping with the preparation, or holding the camera.</p>
                     </div>
                     <div class="well sidebar-nav">
                         <h4>Links</h4>
                         <ul class="nav">
-                            <li><a href="http://sculpin.io">sculpin.io</a></li>
-                            <li><a href="http://twitter.com/getsculpin">@getsculpin</a></li>
+                            <li><a href="http://montreal.lufa.com/">Lufa Farms</a></li>
+                            <li><a href="http://twitter.com/coates">@coates on Twitter</a></li>
+                            <li><a href="http://seancoates.com/">Sean's full site</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="container">
-            &copy; {{ "now"|date("Y") }} {{ site.title }}
+            &copy; {{ "now"|date("Y") }} <a href="{{site.copyright_url}}">{{ site.copyright }}</a>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
