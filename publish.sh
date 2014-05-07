@@ -7,5 +7,5 @@
 sculpin generate --env=prod
 if [ $? -ne 0 ]; then echo "Could not generate the site"; exit 1; fi
 
-rsync -avze 'ssh -p 4668' output_prod/ username@yoursculpinsite:public_html
+rsync -avze 'ssh -p 22' output_prod/ sean@iconoclast.caedmon.net:/www/webroots/seancoates.com/files.seancoates.com/cooklufa
 if [ $? -ne 0 ]; then echo "Could not publish the site"; exit 1; fi
