@@ -121,7 +121,7 @@ class FlickrTwigExtension extends \Twig_Extension
         }
         if (!file_exists($outputPath)) {
             $this->log("OUTPUT: Writing {$cachePath}'s contents to {$outputPath}");
-            file_put_contents($outputPath, $cachePath);
+            copy($cachePath, $outputPath);
         }
         return "/flickr/{$id}.jpg";
     }
