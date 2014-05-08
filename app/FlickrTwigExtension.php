@@ -114,8 +114,14 @@ class FlickrTwigExtension extends \Twig_Extension
     {
         // TODO: don't assume jpeg
         $outputPath = $this->output_dir . DIRECTORY_SEPARATOR . $id . '.jpg';
+        $cachePath = $this->cache_dir . DIRECTORY_SEPARATOR . $id . '.jpg';
+        if (!file_exists($cachePath)) {
+            $this->log("CACHE: Writing {$url}'s contents to {$cachePath}");
+            file_put_contents($cachePath, file_get_contents($url));
+        }
         if (!file_exists($outputPath)) {
-            file_put_contents($outputPath, file_get_contents($url));
+            $this->log("OUTPUT: Writing {$cachePath}'s contents to {$outputPath}");
+            file_put_contents($outputPath, $cachePath);
         }
         return "/flickr/{$id}.jpg";
     }
