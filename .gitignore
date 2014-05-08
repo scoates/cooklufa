@@ -7,3 +7,4 @@
 /source/components/
 s3.conf
 .s3
+app/config/sculpin_services.yml
