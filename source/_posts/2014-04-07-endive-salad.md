@@ -78,4 +78,4 @@ Finally, gently stir in the toasted walnuts.
 
 {{flickr_img('https://www.flickr.com/photos/scoates/14106886156')}}
 
-We (myself that the nine-year-old photographer) ate ours with a side of grilled cheese sandwich, on a rainy Spring sunday afternoon.
+We (myself and the nine-year-old photographer) ate ours with a side of grilled cheese sandwich, on a rainy spring Sunday afternoon.
